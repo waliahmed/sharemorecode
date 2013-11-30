@@ -7,3 +7,5 @@ Thumbs.db
 /node_modules
 /public/packages
 /app/config/production
+/.grunt
+_SpecRunner.html

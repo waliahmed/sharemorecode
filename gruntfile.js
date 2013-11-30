@@ -66,6 +66,16 @@ module.exports = function(grunt) {
             }]
           }
         },
+        phpunit: {
+            classes: {
+                dir: 'app/tests/'
+            },
+            options: {
+                bin: 'vendor/bin/phpunit',
+                bootstrap: 'bootstrap/autoload.php',
+                colors: true
+            }
+        }
     });
 
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -73,11 +83,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-phpunit');
     //grunt.loadNpmTasks('grunt-contrib-concat');
     //grunt.loadNpmTasks('grunt-contrib-copy');
     //grunt.loadNpmTasks('grunt-contrib-clean');
 
     grunt.registerTask('default', ['less:development', 'jshint:beforeconcat', 'jasmine', 'phpunit']);
     grunt.registerTask('test', ['jshint:beforeconcat', 'jasmine', 'phpunit']);
-    grunt.registerTask('production', ['less:production', 'jshint:beforeconcat', 'jasmine', 'uglify', 'jshint:afterconcat', 'phpunit'])
+    grunt.registerTask('production', ['less:production', 'jshint:beforeconcat', 'jasmine', 'uglify', 'jshint:afterconcat', 'phpunit']);
 };

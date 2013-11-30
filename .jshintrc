@@ -4,13 +4,14 @@
   "eqeqeq": true,
   "undef": true,
   "forin": true,
-  "newcap": true,,
+  "newcap": true,
   "unused": true,
   "trailing": true,
-  "maxparams": 4,
-  "maxdepth": 4,
-  "maxlength": 80,
+  "maxparams": "4",
+  "maxdepth": "4",
   "globals": {
-    "jQuery": true
+    "jQuery": true,
+    "module": true,
+    "angular": true
   }
 }
