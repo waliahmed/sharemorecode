@@ -15,3 +15,17 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::resource('snippets', 'SnippetsController');
+
+Route::resource('comments', 'CommentsController');
+
+Route::resource('revisions', 'RevisionsController');
+
+Route::resource('features', 'FeaturesController');
+
+Route::resource('issues', 'IssuesController');
+
+Route::resource('reviews', 'ReviewsController');
+
+Route::resource('users', 'UsersController');
