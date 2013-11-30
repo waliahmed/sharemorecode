@@ -4,9 +4,9 @@ ShareMoreCo.de is a social snippet website created to experiment with Laravel an
 
 ## Official Documentation
 
-__( Documentation coming soon)__
+__( Documentation coming soon )__
 
-### Contributing To Laravel
+### Contributing To ShareMoreCo.de
 
 **All issues and pull requests should be filed on issues tab**
 
