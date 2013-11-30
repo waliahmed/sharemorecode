@@ -47,23 +47,17 @@ module.exports = function(grunt) {
         },
         less: {
           development: {
-            files: [{
-                  expand: true,
-                  cwd: 'styles/less',
-                  src: 'app.less',
-                  dest: 'dist/css/app.css'
-            }]
+            files: {
+                'public/styles/css/app.css' : 'public/styles/less/app.less'
+            }
           },
           production: {
             options: {
               cleancss: true
             },
-            files: [{
-                  expand: true,
-                  cwd: 'styles/less',
-                  src: 'app.less',
-                  dest: 'dist/css/app.css'
-            }]
+            files: {
+                'public/styles/css/app.css' : 'public/styles/less/app.less'
+            }
           }
         },
         phpunit: {
