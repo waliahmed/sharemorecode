@@ -29,3 +29,5 @@ Route::resource('issues', 'IssuesController');
 Route::resource('reviews', 'ReviewsController');
 
 Route::resource('users', 'UsersController');
+
+Route::resource('tags', 'TagsController');
