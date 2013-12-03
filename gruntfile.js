@@ -25,26 +25,6 @@ module.exports = function(grunt) {
                 dest : 'public/dist/smc.<%= pkg.version %>.min.js'
             }
         },
-        watch: {
-            js: {
-                files: ['scripts/js/**/*.js', 'scripts/spec/**/*.js'],
-                tasks: ['jshint', 'jasmine'],
-                options: {
-                    livereload: true
-                }
-            },
-            less: {
-                files: ['styles/less/**/.less'],
-                tasks: [ 'less:development' ],
-                options: {
-                    livereload: true
-                }
-            },
-            blade: {
-                files: ['app/views/**/*.blade.php', '!app/views/emails/**/*.blade.php'],
-                livereload: true
-            }
-        },
         less: {
           development: {
             files: {
@@ -69,6 +49,21 @@ module.exports = function(grunt) {
                 bootstrap: 'bootstrap/autoload.php',
                 colors: true
             }
+        },
+        watch: {
+            options: {
+                livereload: true,
+                tasks: ['default']
+            },
+            js: {
+                files: ['scripts/js/**/*.js', 'scripts/spec/**/*.js']
+            },
+            less: {
+                files: ['styles/less/**/.less']
+            },
+            php: {
+                files: ['app/views/**/*.php', '!app/views/emails/**/*.php']
+            }
         }
     });
 
@@ -82,7 +77,7 @@ module.exports = function(grunt) {
     //grunt.loadNpmTasks('grunt-contrib-copy');
     //grunt.loadNpmTasks('grunt-contrib-clean');
 
-    grunt.registerTask('default', ['less:development', 'jshint:beforeconcat', 'jasmine', 'phpunit']);
+    grunt.registerTask('default', ['less:development', 'jshint:beforeconcat', 'phpunit']);
     grunt.registerTask('test', ['jshint:beforeconcat', 'jasmine', 'phpunit']);
     grunt.registerTask('production', ['less:production', 'jshint:beforeconcat', 'jasmine', 'uglify', 'jshint:afterconcat', 'phpunit']);
 };
